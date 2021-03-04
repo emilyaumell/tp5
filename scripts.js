@@ -41,8 +41,6 @@ window.onload = function () {
   ListDir.onclick = function() {
     ListDir.classList.toggle("dir");
   };
-  
-};
 
 // -------------------------------------------------
 
@@ -61,3 +59,5 @@ z = document.getElementById("steakpic");
 
 // position p tag above photo
 document.body.insertBefore(e, z);
+
+};

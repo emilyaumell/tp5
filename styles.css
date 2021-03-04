@@ -101,9 +101,29 @@ body {
   text-align: center;
 }
 
+/* CSS added for JS addition ************************ */
 
+.biggerHeadline {
+  font-size: 80px;
+}
 
+.clicked { 
+  color: black;
+  background-color: LavenderBlush;
+  border: 5px solid black;
+}
 
+#ingredients.ing ul {
+  visibility: hidden;
+}
+
+#equipment.kit ul {
+  visibility: hidden;
+}
+
+#directions.dir ol {
+  visibility: hidden;
+}
 
 
 /* media queries *************************** */

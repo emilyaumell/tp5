@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +7,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sirloin Steak with Garlic Butter</title>
 
+  <!-- external JavaScript -->
+	<script type="text/javascript" src="scripts.js" defer></script>
+  
 	<!-- external and internal CSS -->
 	<link rel="stylesheet" href="styles.css" media="all">
-	<style>
+	
+<style>
 
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
@@ -115,11 +118,29 @@ body {
   text-align: center;
 }
 
+.biggerHeadline {
+  font-size: 80px;
+}
 
+.clicked { 
+  color: black;
+  background-color: LavenderBlush;
+  border: 5px solid black;
+}
 
+#ingredients.ing ul {
+  visibility: hidden;
+}
 
+#equipment.kit ul {
+  visibility: hidden;
+}
 
+#directions.dir ol {
+  visibility: hidden;
+}  
 
+  
 /* media queries *************************** */
 
 @media screen and (min-width: 575px) {
@@ -149,8 +170,6 @@ body {
   }
   
 }
-
-
 
 
 /* media queries *************************** */
@@ -189,6 +208,71 @@ body {
 	<script src="scripts.js" defer></script>
 	<script>
 		// in-page JavaScript here
+    
+    // change font size using window onload event
+window.onload = function () {
+  // target the headline
+  x = document.getElementById("headline");
+  // add CSS style for headline size
+  x.classList.add("biggerHeadline");
+
+  // -------------------------------------------------
+  // set an event function to trigger when the headline is clicked
+  // background and text color change in CSS
+  x.onclick = function () {
+    x.classList.toggle("clicked");
+  };
+
+  // -------------------------------------------------
+  // set section lists as hidden with onclick event
+
+  // target the ingredients list
+  ListIng = document.querySelector("#ingredients");
+
+  ListIng.classList.add("ing");
+  
+  ListIng.onclick = function () {
+    ListIng.classList.toggle("ing");
+  };
+  
+  // target the equipment list
+  ListKit = document.querySelector("#equipment")
+  
+  ListKit.classList.add("kit");
+  
+  ListKit.onclick = function() {
+    ListKit.classList.toggle("kit");
+  };
+  
+  // target the directions list
+  ListDir = document.querySelector("#directions")
+  
+  ListDir.classList.add("dir");
+  
+  ListDir.onclick = function() {
+    ListDir.classList.toggle("dir");
+  };
+  
+};
+
+// -------------------------------------------------
+
+// create new content tag using JS only
+e = document.createElement("p");
+
+// insert new text
+e.innerHTML = "Prep: 20 mins | Cook: 20 mins | Total: 30 mins | Servings: 8";
+
+// center and style text
+e.style.textAlign = "center";
+e.style.fontSize = "22px";
+
+//  target the img for positioning
+z = document.getElementById("steakpic");
+
+// position p tag above photo
+document.body.insertBefore(e, z);
+    
 	</script>
 
 </head>
